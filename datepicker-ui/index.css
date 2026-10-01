@@ -1,0 +1,77 @@
+* {
+  font-family: Arial, Helvetica, sans-serif;
+  box-sizing: border-box;
+}
+
+.datepicker-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  margin-top: 100px;
+  position: relative;
+}
+
+.datepicker {
+
+
+  outline: none;
+  border: 2px solid black;
+
+  padding: 8px 10px 7px;
+  width: 148px;
+}
+
+.calendar-button {
+  width: 34px;
+  height: 34px;
+  cursor: pointer;
+
+  margin-top: 4px;
+
+  border: 2px solid black;
+  border-left: none;
+}
+
+.calendar {
+  display: none;
+  position: absolute;
+  top: 40px;
+  width: 184px;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 14px;
+  white-space: nowrap;
+  line-height: 1.5rem;
+}
+
+table td {
+  width: 26px;
+  text-align: center;
+  cursor: pointer;
+  border: 1px solid black;
+}
+
+table td:focus {
+  background-color: hsl(0, 0%, 80%);
+  outline: none;
+}
+
+thead {
+  border: 2px solid black;
+}
+
+tbody {
+  border: 2px solid black;
+}
+
+.navigator {
+  cursor: pointer;
+}
+
+#calendar-toggle:checked ~ .calendar {
+  display: block;
+}
