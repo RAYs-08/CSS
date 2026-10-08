@@ -1,0 +1,140 @@
+* {
+  font-family: Arial, sans-serif;
+  box-sizing: border-box;
+  font-size: clamp(0.8rem, 1.5vw, 2rem);
+  font-weight: 500;
+}
+
+main {
+  display: grid;
+  grid-template-columns: 1fr;
+  place-items: center;
+  gap: 30px;
+}
+
+.form-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  width: 70vw;
+}
+
+.form-section {
+  display: flex;
+  flex-direction: column;
+  
+}
+
+h1 {
+  font-size: clamp(1.5rem, 3vw, 4rem);
+  font-weight: bold;
+  margin-block: 40px;
+}
+
+label {
+  display: block;
+}
+
+.form-inputs {
+  display: block;
+  
+  padding: 10px 20px 10px 10px;
+  margin-top: 5px;
+  margin-bottom: 20px;
+
+  border: 2px solid #000000;
+  border-radius: 10px;
+}
+
+.input-container {
+  position: relative;
+  display: inline-block;
+}
+
+.password-visibility-toggle, .visibility-toggle-btn {
+  position: absolute;
+  top: 18px;
+  right: 15px;
+  width: clamp(15px, 2vw, 30px);
+  cursor: pointer;
+}
+
+.password-visibility-toggle {
+  position: static;
+}
+
+.visibility-toggle-btn {
+  border: none;
+  background-color: transparent;
+}
+
+.submit-btn {
+  padding: 15px 0;
+  background-color: black;
+  color: white;
+  width: 20cqw;
+
+  border: none;
+  border-radius: 10px;
+}
+
+.completeness-section {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.progress-container {
+  display: flex; 
+  justify-content: center;
+}
+
+.completion-progress {
+  font-size: 20px;
+  font-weight: bold;
+  color: rgb(68, 68, 68);
+  display: inline-block;
+  padding: 47px 40px;
+  background-color: #ffffff;
+  border-radius: 100%;
+  position: relative;
+}
+
+.completion-progress::before {
+  content: '';
+  padding: 64px 65px;
+  position: absolute;
+  background: linear-gradient(to right, black 50%, rgb(168, 168, 168) 50%);
+  border-radius: 100%;
+  inset: 0;
+  left: -6px;
+  top: -6px;
+  z-index: -1;
+}
+
+.requirements {
+  background-color: rgb(228, 228, 228);
+  list-style: none;
+  padding: 15px;
+  padding-bottom: 60px;
+  margin: 0;
+  border-radius: 10px;
+}
+
+.requirements li {
+  font-size: clamp(0.8rem, 1vw, 1.5rem);
+  margin-bottom: 5px;
+}
+
+h2 {
+  font-weight: bold;
+  font-size: clamp(1rem, 1.5vw, 2rem);
+}
+
+.checked {
+  color: gray;
+}
+
+.error-message {
+  display: none;
+}
