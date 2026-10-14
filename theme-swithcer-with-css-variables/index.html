@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<!--Start of Head-->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <link rel="stylesheet" href="index.css">
+  <link rel="preload" href="index.css" as="style" fetchpriority="high">
+  
+  <title>Document</title>
+<!--End of Head-->
+</head>
+
+<body>
+<!--Start of Body-->
+
+  <main>
+  <!--Start of Main-->
+    <div class="parent-container">
+      <div class="root-container">
+        <div class="theme-container">
+          <div class="theme-switcher">
+            <label for="theme-toggle-light" class="theme-toggle-label">Light</label>
+            <input type="radio" id="theme-toggle-light" name="theme-toggle" aria-label="Toggle LightTheme" value="light" checked>
+          </div>
+
+          <div class="theme-switcher">
+            <label for="theme-toggle-dark" class="theme-toggle-label">Dark</label>
+            <input type="radio" id="theme-toggle-dark" name="theme-toggle" aria-label="Toggle DarkTheme" value="dark">
+          </div>
+
+          <div class="theme-switcher">
+            <label for="theme-toggle-dim" class="theme-toggle-label">Dim</label>
+            <input type="radio" id="theme-toggle-dim" name="theme-toggle" aria-label="Toggle DimTheme" value="dim">
+          </div>
+        </div>
+
+        <div class="content">
+          <h1>Theme Switcher<br>with CSS Variables</h1>
+          <p>
+            This is a simple card that changes theme with CSS variables.
+          </p>
+          <button>
+            Primary Button
+          </button>
+        </div>  
+      </div>
+    </div>
+  <!--End of Main-->
+  </main>
+
+<!--End of Body-->
+</body>
+</html>

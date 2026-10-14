@@ -1,0 +1,166 @@
+/*1. Default / Light Theme Tokens*/
+:root {
+  --color-bg: #fff;
+  --color-surface: #fff;
+  --primary-text: #000;
+  --secondary-text: #ffffff;
+  --thirdary-text: #8a8a8a;
+  --color-accent: #295dee;
+  --color-border: #d3d3d3a1;
+}
+
+/*2. Dark Theme Tokens*/
+:root:has(input[value="dark"]:checked) {
+  --color-bg: #2c2c2c;
+  --color-surface: #181818;
+  --primary-text: #ffffff;
+  --secondary-text: #ffffff;
+  --thirdary-text: #d3d3d3;
+  --color-accent: #295dee;
+  --color-border: #292929;
+}
+
+/*3. Dim Theme Tokens*/
+:root:has(input[value="dim"]:checked)  {
+  --color-bg: #23323f;
+  --color-surface: #222e3a;
+  --primary-text: #ffffff;
+  --secondary-text: #ffffff;
+  --thirdary-text: #8899ac;
+  --color-accent: #1d9bf0;
+  --color-border: #394a58;
+}
+
+input {
+  display: none;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+  font-size: clamp(1rem, 1.5vw, 1.5rem);
+  color: var(--primary-text);
+}
+
+body {
+  background-color: var(--color-bg);
+}
+
+.parent-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: var(--color-bg);
+  transition: all 0.3s ease-in-out;
+}
+
+.root-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: fit-content;
+  gap: 3rem;
+  padding: 2rem;
+  border-radius: 0.5rem;
+  background-color: var(--color-surface);
+  border: 2px solid var(--color-border);
+  transition: all 0.3s ease-in-out;
+}
+
+.theme-container {
+  display: flex;
+  flex-direction: row;
+
+  width: fit-content;
+}
+
+.theme-switcher {
+  background-color: transparent;
+  padding: 0.6rem 0;
+
+  border: 2px solid var(--color-border);
+  border-right: none;
+  transition: all 0.15s ease-in-out;
+}
+
+:where(.theme-switcher, .theme-toggle-label):hover,
+.theme-switcher:has(input:checked),
+.theme-switcher:has(input:checked) .theme-toggle-label {
+  background-color: var(--color-accent);
+  color: var(--secondary-text);
+  cursor: pointer;
+  border-color: var(--color-accent);
+  border-radius: 5px;
+}
+
+:where(.theme-switcher, .theme-toggle-label):active {
+  transform: scale(0.95);
+}
+
+.theme-toggle-label {
+  padding: 0.7rem 2.5rem;
+}
+
+.theme-switcher:last-child {
+  border-right: 2px solid var(--color-border);
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+}
+
+.theme-switcher:last-child:hover {
+  border-radius: 5px;
+  border-color: var(--color-accent);
+}
+
+.theme-switcher:first-child {
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
+}
+
+.theme-switcher:has(input[value ="light"]:checked) 
+.theme-switcher:first-child {
+  background-color: var(--color-accent);
+  color: var(--secondary-text);
+  border-color: var(--color-accent);
+  border-radius: 5px;
+}
+
+.content > p {
+  max-width: 30ch;
+  color: var(--thirdary-text);
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  gap: 1.8rem;
+}
+
+.content > h1 {
+  font-size: clamp(2rem, 2.5vw, 2.5rem);
+}
+
+.content > button {
+  padding: 0.8rem 1.5rem;
+  border: none;
+  border-radius: 5px;
+  width: fit-content;
+  background-color: var(--color-accent);
+  color: var(--secondary-text);
+  font-size: clamp(1rem, 1.5vw, 1.5rem);
+  transition: all 0.15s ease-in-out;
+}
+
+.content > button:hover {
+  background-color: var(--color-bg);
+  color: var(--color-accent);
+  outline: 2px solid var(--color-accent);
+  cursor: pointer;
+}
+
+.content > button:active {
+  transform: scale(0.95);
+}
